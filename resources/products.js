@@ -1,4 +1,4 @@
-const RAW_PRODUCTS = [
+export const RAW_PRODUCTS = [
   {
     "id": "1",
     "nameI18n": "지고한 열망",
