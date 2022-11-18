@@ -1,0 +1,219 @@
+@font-face {
+  font-family: 'SongMyung-Regular';
+  src: URL('./fonts/SongMyung-Regular.ttf') format('truetype');
+}
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'SongMyung-Regular', serif;
+  margin: 0; padding: 0;
+  background-color: white;
+  color: #3c3c3c;
+  font-size: 16px;
+}
+header, nav, main, section, aside, footer, div {
+  position: relative;
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.overlay {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+.flex { display: flex; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.flex-1 { flex: 1; }
+.text-center { text-align: center; }
+#backgroundTypo {
+  font-size: 100px;
+  opacity: 0.1;
+  position: fixed;
+  left: 0; top: 0;
+  height: 10000px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  user-select: none;
+  transform: translateZ(0);
+}
+#header {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #999;
+  transition: 0.4s ease;
+}
+#logo {
+  position: absolute;
+  top: 24px;
+  font-size: 28px;
+  font-weight: bold;
+}
+#gnb {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item {
+  padding: 0 24px;
+  transition: 0.24s ease;
+}
+.nav-item:hover {
+  cursor: pointer;
+  color: #6ce3df;
+}
+#content {
+  margin-top: 80px;
+}
+#heroText {
+  transition: 0.4s ease;
+  padding: 0 32px;
+  background-color: white;
+}
+#heroText .border {
+  transition: 0.4s ease;
+  width: 100px;
+  height: 5px;
+  background: black;
+}
+#heroImage {
+  overflow: hidden;
+}
+#heroImage > .overlay {
+  opacity: 0;
+  transition: 0.4s ease;
+}
+#heroImage > img {
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.12);
+  transition: 0.4s ease;
+}
+#hero:hover #heroText {
+  background: #666;
+  color: white;
+}
+#hero:hover #heroText .border {
+  width: 150px;
+  height: 10px;
+  background: white;
+}
+#hero:hover .overlay { opacity: 0.4; }
+#hero:hover img {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+  #gnb {
+    width: 100%;
+    margin: 84px 0px 24px;
+  }
+  #gnb .flex-1 { display: none }
+}
+@media screen and (max-width: 620px) {
+  #gnb {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  #gnb .flex-1 { display: none }
+}
+#collectionProductsRoot {
+  width: 120vw;
+  overflow: hidden;
+  transform: translateX(-10vw) rotate(3deg);
+}
+#collectionProducts {
+  gap: 48px;
+  flex-flow: wrap;
+  width: 2400px;
+  transform: translateX(1400px);
+}
+.section-title {
+  padding: 48px 0;
+}
+.product-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 400px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.6);
+  opacity: 0.8;
+  transition: 0.18s ease;
+  overflow: hidden;
+}
+.product-card:hover {
+  opacity: 1;
+  background: white;
+  color: black;
+}
+.product-card:hover .product-card-text {
+  transform: translateY(24px);
+  color: #d9d9d9;
+}
+.product-card-text {
+  background-color: rgba(0,0,0,0.64);
+  color: #999;
+  position: absolute;
+  left: 0; top: 0;
+  padding: 24px;
+  transform: translateY(312px);
+  transition: 1.2s ease;
+}
+.product-card-description {
+  margin-top: 80px;
+  font-size: 18px;
+}
+#seasonalProducts {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 72px;
+}
+#seasonalProducts .product-card {
+  opacity: 0;
+  width: 320px;
+  height: 500px;
+  transition: 0.64s ease;
+  transform: translateY(32px);
+}
+#seasonalProducts .product-card-text {
+  transform: translateY(400px);
+}
+#seasonalProducts .product-card:hover .product-card-text {
+  transform: translateY(104px);
+  color: #d9d9d9;
+}
+
+#footer {
+  height: 480px;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,1) 50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+}
